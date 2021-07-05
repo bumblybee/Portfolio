@@ -12,6 +12,18 @@
       margin: 0 auto 3rem;
       width: 85%;
     }
+
+    .icons {
+      text-align: center;
+    }
+  }
+
+  .menu-nav {
+    width: 40%;
+  }
+
+  .menu-bg {
+    width: 60%;
   }
 
   .project-content {
@@ -42,7 +54,7 @@
 
     .subheading {
       width: 90%;
-      margin: 0 auto 3rem;
+      margin: 0 auto 2rem;
     }
   }
 
@@ -81,6 +93,7 @@
     grid-template-columns: 1fr;
     justify-items: center;
     width: 100%;
+    margin-top: 3rem;
   }
 
   .about-img {
@@ -141,7 +154,7 @@
     padding: 2rem;
 
     &#home h1 {
-      margin-top: 55%;
+      margin-top: 40%;
     }
 
     &#about h1,
@@ -160,17 +173,13 @@
     }
 
     .subheading {
-      width: 90%;
+      width: 95%;
     }
   }
 
   .about-wrapper,
   .project-wrapper {
     width: 100%;
-  }
-
-  .about-content {
-    margin-top: 4.5rem;
   }
 
   .project {
