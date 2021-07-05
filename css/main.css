@@ -132,7 +132,7 @@ body {
   line-height: 1.5;
 }
 body#bg {
-  background: url("/dist/assets/codebkgrd.jpg");
+  background: url("../assets/codebkgrd.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
