@@ -1,0 +1,61 @@
+$primary-color: #444;
+$secondary-color: #f0db4f;
+$tertiary-color: #61dbfb;
+$bg-opacity: 0.925;
+$show-home-image: true;
+$home-image: url("/dist/assets/codebkgrd.jpg");
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin bg {
+  @if $show-home-image {
+    &#bg {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $bg-opacity);
+      }
+    }
+  }
+}
+
+// Media queries
+@mixin screenSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin screenMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin screenLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin screenXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}

@@ -1,0 +1,130 @@
+// Hamburger button
+
+.hamburger {
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+  right: 35px;
+  top: 35px;
+  @include easeOut;
+
+  &-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    @include easeOut;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+    .hamburger-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+// Menu
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: $bg-opacity;
+  visibility: hidden;
+  display: flex;
+  &.show {
+    visibility: visible;
+  }
+
+  &-bg,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    @include easeOut;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: darken($primary-color, 5);
+    transform: translate3d(0, -100%, 0);
+    width: 25%;
+    height: 100%;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &-bg {
+    background: darken($tertiary-color, 5);
+    transform: translate3d(0, 100%, 0);
+    width: 75%;
+    opacity: 0.2;
+    height: 100%;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .portrait {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid 3px $tertiary-color;
+    background: url("");
+  }
+
+  &.menu-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $tertiary-color;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: set-text-color($primary-color);
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
+}
+
+// Delay each menu item transition by 0.1s
+// * my index so delay increases slightly for each and they don't all come in at same time
+
+@for $x from 1 through 4 {
+  .menu-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
