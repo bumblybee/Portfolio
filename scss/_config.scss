@@ -1,9 +1,9 @@
 $primary-color: #444;
 $secondary-color: #f0db4f;
 $tertiary-color: #61dbfb;
-$bg-opacity: 0.925;
+$bg-opacity: 0.9;
 $show-home-image: true;
-$home-image: url("assets/codebkgrd.jpg");
+$home-image: url("assets/codebkgrd.webp");
 
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
