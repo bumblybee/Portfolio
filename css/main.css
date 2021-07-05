@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600&display=swap");
+.hamburger {
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+  right: 35px;
+  top: 35px;
+  transition: all 0.5s ease-out;
+}
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: #fff;
+  transition: all 0.5s ease-out;
+}
+.hamburger.close {
+  transform: rotate(180deg);
+}
+.hamburger.close .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.close .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.close .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.925;
+  visibility: hidden;
+  display: flex;
+}
+.menu.show {
+  visibility: visible;
+}
+.menu-bg, .menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+.menu-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #373737;
+  transform: translate3d(0, -100%, 0);
+  width: 25%;
+  height: 100%;
+}
+.menu-nav.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-bg {
+  background: #48d5fa;
+  transform: translate3d(0, 100%, 0);
+  width: 75%;
+  opacity: 0.2;
+  height: 100%;
+}
+.menu-bg.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu .portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: solid 3px #61dbfb;
+  background: url("");
+}
+.menu.menu-item {
+  transform: translate3d(600px, 0, 0);
+  transition: all 0.5s ease-out;
+}
+.menu.menu-item.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu.menu-item.current > a {
+  color: #61dbfb;
+}
+.menu-link {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+.menu-link:hover {
+  color: #61dbfb;
+}
+
+.menu-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.menu-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.menu-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.menu-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #444;
+  color: #fff;
+  height: 100%;
+  font-family: "Barlow", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+body#bg {
+  background: url("/dist/assets/codebkgrd.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+body#bg:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.925);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+}
+h1.heading,
+h2.heading,
+h3.heading {
+  font-size: 6rem;
+}
+h1.subheading,
+h2.subheading,
+h3.subheading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+}
+h1 span.dev,
+h2 span.dev,
+h3 span.dev {
+  color: #61dbfb;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-tertiary {
+  color: #61dbfb;
+}
+
+.surname-text {
+  color: #61dbfb;
+}
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px);
+  width: 100%;
+}
+main .icons {
+  margin-top: 1rem;
+  padding: 0 0 0 0.5rem;
+}
+main .icons a {
+  padding: 0.5rem;
+}
+main .icons a:hover {
+  color: #61dbfb;
+  transition: all 0.5s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home h1 {
+  margin-top: 20vh;
+}
+main#about h1, main#projects h1, main#contact h1 {
+  margin-top: 5vh;
+}
+main#about .subheading, main#projects .subheading, main#contact .subheading {
+  padding-left: 0;
+}
+
+footer {
+  height: 60px;
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+}
+
+.about-wrapper,
+.project-wrapper,
+.contact-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.about-img {
+  border-radius: 50%;
+  border: #61dbfb 3px solid;
+  height: 280px;
+  width: 280px;
+  margin-left: 2rem;
+}
+
+.bio {
+  font-size: 1.5rem;
+  margin-left: -5rem;
+}
+.bio p {
+  width: 80%;
+  font-size: 1.4rem;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project {
+  background: #565656;
+  padding: 1rem;
+  border-bottom: #61dbfb 5px solid;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
+}
+.project img {
+  border-radius: 6px;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.project:not(:last-child) {
+  margin-right: 1rem;
+}
+.project-links a button {
+  border: none;
+  padding: 0.3rem 0.7rem;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.project-links a button i {
+  margin-right: 0.25rem;
+}
+.project-links a:first-of-type button {
+  background: #848484;
+}
+.project-links a:first-of-type button:hover {
+  background: #777777;
+}
+.project-links a:last-of-type button {
+  background: #1e1e1e;
+}
+.project-links a:last-of-type button:hover {
+  background: black;
+}
+.project .project-text h3 {
+  color: #7ae1fc;
+}
+.project .project-text h4 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-wrapper {
+  width: 100%;
+}
+
+.contact-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  width: 80%;
+}
+.contact-items div {
+  font-size: 2rem;
+  border: 3px solid white;
+  border-radius: 6px;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+.contact-items div:hover {
+  padding: 1.35rem 2.35rem;
+  background: #61dbfb;
+  color: #000;
+  border-radius: 0;
+}
+.contact-items div:hover span {
+  color: #fff;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main .heading,
+main .subheading {
+    text-align: center;
+  }
+  main .subheading {
+    margin: 0 auto 3rem;
+    width: 85%;
+  }
+
+  .project-content {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .project img {
+    width: 100%;
+    height: 320px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  main .heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  main .subheading {
+    width: 90%;
+    margin: 0 auto 3rem;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  ul.menu-nav,
+div.menu-bg {
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menu-nav.show,
+div.menu-bg.show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .menu-nav {
+    height: 100vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-bg {
+    height: 0;
+    transform: translate3d(100%, 0, 0);
+    opacity: 0.4;
+  }
+  .menu-bg .portrait {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .about-img {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .bio {
+    margin-left: 0;
+  }
+  .bio p {
+    width: 100%;
+  }
+
+  .about-wrapper,
+.project-wrapper {
+    width: 80%;
+  }
+
+  .project-content {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    width: 100%;
+  }
+
+  .project {
+    margin-right: 0 !important;
+  }
+  .project img {
+    height: 280px;
+  }
+  .project .project-text {
+    text-align: left;
+  }
+  .project .project-links {
+    margin: 0 auto 0 0;
+  }
+
+  .contact-items {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .contact-items div {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem;
+  }
+  main#home h1 {
+    margin-top: 55%;
+  }
+  main#about h1, main#contact h1, main#projects h1 {
+    margin-top: 10vh;
+  }
+  main#projects {
+    padding: 0.5rem;
+  }
+  main .heading {
+    margin-top: 1rem;
+    font-size: 5rem;
+  }
+  main .subheading {
+    width: 90%;
+  }
+
+  .about-wrapper,
+.project-wrapper {
+    width: 100%;
+  }
+
+  .about-content {
+    margin-top: 4.5rem;
+  }
+
+  .project img {
+    height: 200px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
