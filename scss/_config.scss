@@ -3,7 +3,7 @@ $secondary-color: #f0db4f;
 $tertiary-color: #61dbfb;
 $bg-opacity: 0.925;
 $show-home-image: true;
-$home-image: url("/assets/codebkgrd.webp");
+$home-image: url("/assets/codebkgrd2.webp");
 
 @function set-text-color($color) {
   @if (lightness($color) > 40) {

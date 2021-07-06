@@ -131,7 +131,7 @@ body {
   line-height: 1.5;
 }
 body#bg {
-  background: url("/assets/codebkgrd.webp");
+  background: url("/assets/codebkgrd2.webp");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -186,6 +186,7 @@ header {
 
 .surname-text {
   color: #61dbfb;
+  display: inline-block;
 }
 
 main {
@@ -245,6 +246,7 @@ footer {
   height: 280px;
   width: 280px;
   margin-left: 2rem;
+  animation: fadeIn 1s ease-out;
 }
 
 .bio {
@@ -278,6 +280,7 @@ footer {
   object-fit: cover;
   margin-bottom: 1rem;
   cursor: pointer;
+  animation: fadeIn 1s ease-out;
 }
 .project:not(:last-child) {
   margin-right: 1rem;
@@ -347,6 +350,40 @@ footer {
   color: #fff;
 }
 
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   main .heading,
 main .subheading {

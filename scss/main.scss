@@ -53,6 +53,7 @@ header {
 
 .surname-text {
   color: $tertiary-color;
+  display: inline-block;
 }
 
 main {
@@ -124,6 +125,8 @@ footer {
   height: 280px;
   width: 280px;
   margin-left: 2rem;
+
+  animation: fadeIn 1s ease-out;
 }
 
 .bio {
@@ -159,6 +162,7 @@ footer {
     object-fit: cover;
     margin-bottom: 1rem;
     cursor: pointer;
+    animation: fadeIn 1s ease-out;
   }
 
   &:not(:last-child) {
@@ -242,6 +246,48 @@ footer {
         color: set-text-color($primary-color);
       }
     }
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
