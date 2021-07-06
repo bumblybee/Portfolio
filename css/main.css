@@ -282,6 +282,9 @@ footer {
 .project:not(:last-child) {
   margin-right: 1rem;
 }
+.project-links {
+  display: flex;
+}
 .project-links a button {
   border: none;
   padding: 0.3rem 0.7rem;
@@ -294,6 +297,7 @@ footer {
 }
 .project-links a:first-of-type button {
   background: #848484;
+  margin-right: 0.2rem;
 }
 .project-links a:first-of-type button:hover {
   background: #777777;
@@ -487,9 +491,6 @@ div.menu-bg.show {
   }
   .project .project-text {
     text-align: left;
-  }
-  .project .project-links {
-    margin: 0 auto 0 0;
   }
 
   .contact-items {
