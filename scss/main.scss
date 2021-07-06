@@ -166,6 +166,8 @@ footer {
   }
 
   &-links {
+    display: flex;
+
     a button {
       border: none;
       padding: 0.3rem 0.7rem;
@@ -180,6 +182,8 @@ footer {
 
     a:first-of-type button {
       background: lighten($primary-color, 25);
+      margin-right: 0.2rem;
+
       &:hover {
         background: lighten($primary-color, 20);
       }
