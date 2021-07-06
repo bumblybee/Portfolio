@@ -270,7 +270,7 @@ footer {
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
 }
 .project img {
