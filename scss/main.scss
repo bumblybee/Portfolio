@@ -114,9 +114,10 @@ footer {
 .about-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: center;
-
+  place-items: center;
+  grid-gap: 2rem;
   margin-top: 6rem;
+  width: 90%;
 }
 
 .about-img {
@@ -124,17 +125,14 @@ footer {
   border: $tertiary-color 3px solid;
   height: 280px;
   width: 280px;
-  margin-left: 2rem;
 
   animation: fadeIn 1s ease-out;
 }
 
 .bio {
   font-size: 1.5rem;
-  margin-left: -5rem;
 
   p {
-    width: 80%;
     font-size: 1.4rem;
   }
 }
