@@ -423,10 +423,13 @@ main .subheading {
   .project-content {
     grid-template-columns: 1fr;
     grid-gap: 1rem;
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
   }
 
+  .project {
+    margin-right: 0 !important;
+  }
   .project img {
     width: 100%;
     height: 320px;
