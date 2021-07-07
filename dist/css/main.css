@@ -319,15 +319,14 @@ footer {
 
 .contact-wrapper {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .contact-items {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 4rem;
-  width: 80%;
 }
 .contact-items div {
   font-size: 2rem;
@@ -346,6 +345,9 @@ footer {
 }
 .contact-items div:hover span {
   color: #fff;
+}
+.contact-items div:not(:nth-child(3)) {
+  margin-right: 2rem;
 }
 
 @keyframes moveInRight {
@@ -433,6 +435,11 @@ main .subheading {
   .contact-items {
     width: 100%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-items div {
+    margin-right: 0 !important;
   }
 
   .contact-items div {
@@ -529,8 +536,9 @@ div.menu-bg.show {
   }
 
   .contact-items {
-    width: 100%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .contact-items div {

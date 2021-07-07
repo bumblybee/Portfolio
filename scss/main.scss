@@ -214,15 +214,14 @@ footer {
 
 .contact-wrapper {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .contact-items {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 4rem;
-  width: 80%;
 
   div {
     font-size: 2rem;
@@ -242,6 +241,10 @@ footer {
       span {
         color: set-text-color($primary-color);
       }
+    }
+
+    &:not(:nth-child(3)) {
+      margin-right: 2rem;
     }
   }
 }

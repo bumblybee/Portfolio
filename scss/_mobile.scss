@@ -60,6 +60,12 @@
   .contact-items {
     width: 100%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      margin-right: 0 !important;
+    }
   }
 
   .contact-items div {
@@ -164,8 +170,9 @@
   }
 
   .contact-items {
-    width: 100%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .contact-items div {
