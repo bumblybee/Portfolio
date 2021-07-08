@@ -3,7 +3,7 @@ $secondary-color: #f0db4f;
 $tertiary-color: #61dbfb;
 $bg-opacity: 0.925;
 $show-home-image: true;
-$home-image: url("/assets/codebkgrd2.webp");
+$home-image: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_S6G-XtKS4.jpg?tr=w-2000,h-1000");
 
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
@@ -20,7 +20,7 @@ $home-image: url("/assets/codebkgrd2.webp");
 @mixin bg {
   @if $show-home-image {
     &#bg {
-      background: $home-image;
+      // background-image: $home-image;
       background-attachment: fixed;
       background-size: cover;
 

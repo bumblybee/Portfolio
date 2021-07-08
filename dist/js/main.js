@@ -7,6 +7,7 @@ const phone = document.querySelector(".phone");
 
 let showMenu = false;
 
+window.addEventListener("load", setImageWidth);
 hamburger.addEventListener("click", toggleMenu);
 phone.addEventListener("click", copyPhoneNumber);
 
@@ -68,4 +69,12 @@ function showCopiedMessage(state) {
     phone.textContent = "(319) 239-3607";
     phone.prepend(span);
   }, 2000);
+}
+
+function setImageWidth() {
+  const bg = document.querySelector("body#bg");
+  bg.style.backgroundImage =
+    "-webkit-image-set(url('https://ik.imagekit.io/dzs7huqkhng/codebkgrd_ODy65dcT9.webp?tr=w-2000') 1x, url('https://ik.imagekit.io/dzs7huqkhng/codebkgrd_ODy65dcT9.webp?tr=w-1024') 2x, url('https://ik.imagekit.io/dzs7huqkhng/codebkgrd_ODy65dcT9.webp?tr=w-600') 3x)";
+
+  console.log("yup");
 }
