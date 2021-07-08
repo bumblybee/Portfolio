@@ -131,7 +131,6 @@ body {
   line-height: 1.5;
 }
 body#bg {
-  background: url("/assets/codebkgrd2.webp");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -247,7 +246,7 @@ footer {
   border: #61dbfb 3px solid;
   height: 280px;
   width: 280px;
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .bio {
@@ -278,7 +277,7 @@ footer {
   object-fit: cover;
   margin-bottom: 1rem;
   cursor: pointer;
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 .project:not(:last-child) {
   margin-right: 1rem;
