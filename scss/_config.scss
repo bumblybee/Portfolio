@@ -20,7 +20,7 @@ $home-image: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_S6G-XtKS4.jpg?tr=
 @mixin bg {
   @if $show-home-image {
     &#bg {
-      // background-image: $home-image;
+      background-image: $home-image;
       background-attachment: fixed;
       background-size: cover;
 

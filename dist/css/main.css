@@ -131,6 +131,7 @@ body {
   line-height: 1.5;
 }
 body#bg {
+  background-image: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_S6G-XtKS4.jpg?tr=w-2000,h-1000");
   background-attachment: fixed;
   background-size: cover;
 }
