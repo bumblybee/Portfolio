@@ -438,16 +438,13 @@ main .subheading {
   .contact-items {
     width: 100%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
-  .contact-items div {
-    margin-right: 0 !important;
   }
 
   .contact-items div {
     display: flex;
     width: 500px;
+    margin-right: 0 !important;
   }
   .contact-items div span {
     margin-right: 0.5rem;
@@ -547,6 +544,7 @@ div.menu-bg.show {
   .contact-items div {
     font-size: 1.5rem;
     width: 400px;
+    margin-right: 0 !important;
   }
 }
 @media screen and (max-width: 500px) {
@@ -579,9 +577,15 @@ div.menu-bg.show {
     height: 200px;
   }
 
+  .contact-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .contact-items div {
     width: 300px;
     flex-direction: column;
+    align-items: center;
   }
 }
 
