@@ -1,9 +1,7 @@
 $primary-color: #444;
 $secondary-color: #f0db4f;
 $tertiary-color: #61dbfb;
-$bg-opacity: 0.925;
-$show-home-image: true;
-$home-image: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_S6G-XtKS4.jpg?tr=w-2000,h-1000");
+$bg-opacity: 0.9;
 
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
@@ -17,24 +15,17 @@ $home-image: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_S6G-XtKS4.jpg?tr=
   transition: all 0.5s ease-out;
 }
 
+// Display gray filter over home bg image
 @mixin bg {
-  @if $show-home-image {
-    &#bg {
-      background-image: $home-image;
-      background-attachment: fixed;
-      background-size: cover;
-
-      &:after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba($primary-color, $bg-opacity);
-      }
-    }
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($primary-color, $bg-opacity);
   }
 }
 
