@@ -113,6 +113,7 @@ footer {
 }
 
 // About
+
 .about-wrapper,
 .project-wrapper,
 .contact-wrapper {
@@ -132,8 +133,8 @@ footer {
 .about-img {
   border-radius: 50%;
   border: $tertiary-color 3px solid;
-  height: 280px;
-  width: 280px;
+  height: 290px;
+  width: 290px;
 
   animation: fadeIn 0.5s ease-out;
 }
@@ -150,6 +151,12 @@ footer {
 .project-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.project-header {
+  // display: flex;
+  // width: 100%;
+  // justify-content: space-between;
 }
 
 .project {
@@ -180,10 +187,11 @@ footer {
 
     a button {
       border: none;
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.7rem;
       color: #fff;
       cursor: pointer;
       margin-bottom: 0.5rem;
+      border-radius: 4px;
 
       i {
         margin-right: 0.25rem;
@@ -210,6 +218,7 @@ footer {
   .project-text {
     h3 {
       color: lighten($tertiary-color, 5);
+      font-size: 1.3rem;
     }
 
     h4 {
