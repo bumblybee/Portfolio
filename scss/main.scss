@@ -153,12 +153,6 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.project-header {
-  // display: flex;
-  // width: 100%;
-  // justify-content: space-between;
-}
-
 .project {
   background: lighten($primary-color, 7);
   padding: 1rem;
@@ -244,6 +238,7 @@ footer {
 .contact-items {
   display: flex;
   margin-top: 4rem;
+  gap: 2rem;
 
   div {
     font-size: 2rem;
@@ -255,7 +250,7 @@ footer {
     transition: all 0.25s ease-out;
 
     &:hover {
-      padding: 1.35rem 2.35rem;
+      padding: 1.4rem 2.4rem;
       background: $tertiary-color;
       color: set-text-color($tertiary-color);
       border-radius: 0;

@@ -335,6 +335,7 @@ footer {
 .contact-items {
   display: flex;
   margin-top: 4rem;
+  gap: 2rem;
 }
 .contact-items div {
   font-size: 2rem;
@@ -346,7 +347,7 @@ footer {
   transition: all 0.25s ease-out;
 }
 .contact-items div:hover {
-  padding: 1.35rem 2.35rem;
+  padding: 1.4rem 2.4rem;
   background: #61dbfb;
   color: #000;
   border-radius: 0;
