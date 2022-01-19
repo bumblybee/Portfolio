@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 .hamburger {
   position: absolute;
   z-index: 3;
@@ -197,12 +198,22 @@ main img.home-img {
   max-height: 100vh;
   width: 100%;
 }
+main h2.subheading {
+  margin-bottom: 1rem;
+}
 main .icons {
-  margin-top: 1rem;
   padding: 0 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.25rem;
 }
 main .icons a {
   padding: 0.5rem;
+  font-size: 2.2rem;
+}
+main .icons a:last-of-type {
+  font-size: 2.4rem;
 }
 main .icons a:hover {
   color: #61dbfb;
@@ -327,6 +338,7 @@ footer {
 
 .contact-wrapper {
   width: 100%;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -334,8 +346,9 @@ footer {
 
 .contact-items {
   display: flex;
-  margin-top: 4rem;
+  margin-top: 4.5rem;
   gap: 2rem;
+  color: #fff;
 }
 .contact-items div {
   font-size: 2rem;
@@ -348,12 +361,13 @@ footer {
 }
 .contact-items div:hover {
   padding: 1.4rem 2.4rem;
-  background: #61dbfb;
-  color: #000;
-  border-radius: 0;
-}
-.contact-items div:hover span {
+  background: url("https://ik.imagekit.io/dzs7huqkhng/codebkgrd_ODy65dcT9.webp?updatedAt=1625773403843?w-500,h-200");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #fff;
+  border-radius: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 .contact-items div:not(:nth-child(3)) {
   margin-right: 2rem;
@@ -454,6 +468,7 @@ main .subheading {
     display: flex;
     width: 500px;
     margin-right: 0 !important;
+    justify-content: center;
   }
   .contact-items div span {
     margin-right: 0.5rem;
@@ -595,6 +610,10 @@ div.menu-bg.show {
     width: 300px;
     flex-direction: column;
     align-items: center;
+  }
+  .contact-items div span {
+    display: flex;
+    flex-direction: column;
   }
 }
 
