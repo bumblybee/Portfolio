@@ -2,6 +2,8 @@
 @import "menu";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
+$scaleFactor: 1.03;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -55,6 +57,7 @@ header {
 .surname-text {
   color: $tertiary-color;
   display: inline-block;
+
   &:hover {
     transform: skew(-0.06turn, 18deg);
   }
@@ -80,6 +83,17 @@ main {
 
   h2.subheading {
     margin-bottom: 1rem;
+
+    &.scrolling-text {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: min-content;
+      animation: textScroll 3s steps(50, end);
+    }
   }
 
   .icons {
@@ -100,11 +114,15 @@ main {
 
       &:hover {
         color: $tertiary-color;
-        transform: skew(-0.06turn, 18deg);
-      }
-
-      &:nth-child(even):hover {
-        transform: skew(0.06turn, -18deg);
+        &:nth-child(odd) {
+          transform: skew(-0.06turn, 18deg);
+        }
+        &:nth-child(even):hover {
+          transform: skew(0.06turn, -18deg);
+        }
+        &:nth-child(1):hover {
+          transform: rotate(45deg);
+        }
       }
     }
   }
@@ -145,6 +163,7 @@ footer {
 }
 
 .about-img {
+  transition: 0.15s ease-out;
   border-radius: 50%;
   border: $tertiary-color 3px solid;
   height: 335px;
@@ -152,7 +171,7 @@ footer {
   animation: fadeIn 0.5s ease-out;
 
   &:hover {
-    box-shadow: 0 0 40px 30px $tertiary-color-light;
+    box-shadow: 0 0 50px 40px $tertiary-color-light;
     transform: scale(1.015);
   }
 }
@@ -179,7 +198,7 @@ footer {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease;
 
   img {
     border-radius: 6px;
@@ -205,7 +224,6 @@ footer {
       cursor: pointer;
       margin-bottom: 0.5rem;
       border-radius: 4px;
-
       i {
         margin-right: 0.25rem;
       }
@@ -242,7 +260,7 @@ footer {
 
   &:hover {
     background: lighten($primary-color, 10);
-    transform: scale(1.04);
+    transform: scale($scaleFactor);
     box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.4);
   }
 }
@@ -296,11 +314,11 @@ footer {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
+    transform: translateX(20rem);
   }
 
   80% {
-    transform: translateX(-1rem);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -312,11 +330,11 @@ footer {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
 
   100% {
@@ -332,6 +350,20 @@ footer {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes textScroll {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
   }
 }
 

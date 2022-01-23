@@ -4,7 +4,6 @@ const menuNav = document.querySelector(".menu-nav")
 const menuBg = document.querySelector(".menu-bg")
 const menuItems = document.querySelectorAll(".menu-item")
 const phone = document.querySelector(".phone")
-
 let showMenu = false
 
 window.addEventListener("load", setImageWidth)
@@ -34,7 +33,8 @@ function toggleMenu() {
 }
 
 function copyPhoneNumber() {
-  const phoneNum = phone.textContent.split(":")[1].trim()
+  const phoneNum = phone.textContent.trim()
+
   navigator.permissions.query({ name: "clipboard-write" }).then((res) => {
     if (res.state == "granted" || res.state == "prompt") {
       updateClipboard(phoneNum)
@@ -44,14 +44,14 @@ function copyPhoneNumber() {
 
 function updateClipboard(clip) {
   navigator.clipboard.writeText(clip).then(() => {
-    showCopiedMessage("success")
+    showPhoneMessage("success")
   }),
     () => {
-      showCopiedMessage("fail")
+      showPhoneMessage("fail")
     }
 }
 
-function showCopiedMessage(state) {
+function showPhoneMessage(state) {
   let msg
 
   if (state === "success") {
@@ -60,14 +60,11 @@ function showCopiedMessage(state) {
     msg = "Unable to copy phone number"
   }
 
+  const originalContent = phone.innerHTML
   phone.textContent = msg
 
   setTimeout(() => {
-    const span = document.createElement("span")
-    span.textContent = "Phone: "
-    span.className = "text-tertiary"
-    phone.textContent = "(319) 239-3607"
-    phone.prepend(span)
+    phone.innerHTML = originalContent
   }, 2000)
 }
 

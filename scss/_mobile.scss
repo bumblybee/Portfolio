@@ -93,6 +93,12 @@
       width: 90%;
       margin: 0 auto 2rem;
     }
+
+    h2.subheading.scrolling-text {
+      white-space: normal;
+      width: 100%;
+      animation: none;
+    }
   }
 
   .menu {
@@ -186,10 +192,6 @@
   main {
     padding: 2rem;
 
-    &#home h1 {
-      margin-top: 40%;
-    }
-
     &#about h1,
     &#contact h1,
     &#projects h1 {
@@ -207,6 +209,10 @@
 
     .subheading {
       width: 95%;
+    }
+
+    .icons {
+      justify-content: center;
     }
   }
 
